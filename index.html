@@ -93,5 +93,19 @@ function searchVideos() {
   });
 }
 </script>
+  
+<script type="text/javascript" src="https://cdn.tgads.space/assets/js/adexium-widget.min.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+    const adexiumAds = new AdexiumWidget({
+        wid: '99f75a19-afc9-4e9f-8633-9982b1255e7b',
+        adFormat: 'interstitial',
+        firstAdImpressionIntervalInSeconds: 10,
+        adImpressionIntervalInSeconds: 45
+    });
+    adexiumAds.autoMode();
+});
+</script>
+
 </body>
 </html>
