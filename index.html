@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Video Hub</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101827;
+  color: white;
+  text-align: center;
+}
+header {
+  background: #1769e0;
+  padding: 25px 15px;
+}
+h1 { margin: 0; }
+.container { padding: 20px; }
+input {
+  width: 90%;
+  padding: 13px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+}
+button {
+  background: #1685f8;
+  color: white;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🎬 Smart Video Hub</h1>
+<p>Discover Videos & Useful Information</p>
+</header>
+<div class="container">
+<input id="search" placeholder="Search videos..."
+oninput="searchVideos()">
+
+<div id="videos">
+<div class="card">
+<h3>📱 Mobile Tips</h3>
+<p>Learn useful mobile tricks and tips.</p>
+<button onclick="openVideo('Mobile tips')">Watch</button>
+</div>
+
+<div class="card">
+<h3>💻 Technology</h3>
+<p>Discover new technology and apps.</p>
+<button onclick="openVideo('Technology')">Explore</button>
+</div>
+
+<div class="card">
+<h3>🎥 Entertainment</h3>
+<p>Explore interesting videos.</p>
+<button onclick="openVideo('Entertainment')">Explore</button>
+</div>
+</div>
+</div>
+<script>
+const tg = window.Telegram.WebApp;
+tg.ready();
+tg.expand();
+
+function openVideo(topic) {
+  window.open(
+    'https://www.youtube.com/results?search_query=' +
+    encodeURIComponent(topic),
+    '_blank'
+  );
+}
+
+function searchVideos() {
+  let value = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display =
+      card.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>
