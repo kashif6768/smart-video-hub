@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Video Hub</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 <style>
 body {
   margin: 0;
@@ -41,7 +42,8 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
-</style> 
+</style>
+
 <script type="text/javascript" src="https://cdn.tgads.space/assets/js/adexium-widget.min.js"></script>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
@@ -51,18 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     adexiumWidget.autoMode();
 });
+</script>
+</head>
 
-  </script>
-</head>
-<body>
-<header>
-<h1>🎬 Smart Video Hub</h1>
-</head>
 <body>
 <header>
 <h1>🎬 Smart Video Hub</h1>
 <p>Discover Videos & Useful Information</p>
 </header>
+
 <div class="container">
 <input id="search" placeholder="Search videos..."
 oninput="searchVideos()">
@@ -87,6 +86,7 @@ oninput="searchVideos()">
 </div>
 </div>
 </div>
+
 <script>
 const tg = window.Telegram.WebApp;
 tg.ready();
@@ -107,20 +107,6 @@ function searchVideos() {
       card.innerText.toLowerCase().includes(value) ? 'block' : 'none';
   });
 }
-</script>
-  
-<script type="text/javascript" src="https://cdn.tgads.space/assets/js/adexium-widget.min.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-    const adexiumAds = new AdexiumWidget({
-        wid:  'da19c7ad-3570-404e-902f-ba0b0c231627',
-        adFormat: 'interstitial',
-      debug: true,
-        firstAdImpressionIntervalInSeconds: 10,
-        adImpressionIntervalInSeconds: 45
-    });
-    adexiumAds.autoMode();
-});
 </script>
 
 </body>
